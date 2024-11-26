@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events - ABSA SJSU</title>
+    <!-- Include the same CSS and font links as index.html -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href='https://cdn.jsdelivr.net/npm/@fullcalendar/core@6.1.10/main.min.css' rel='stylesheet' />
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation (same as index.html) -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">ABSA SJSU</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="events.html" class="active">Events</a>
+                <a href="photos.html">Photos</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Calendar Section -->
+    <section class="calendar-section" id="calendar">
+        <h2 class="section-title">Upcoming Events</h2>
+        <div id="calendar"></div>
+    </section>
+
+    <!-- Include Footer -->
+    <footer id="contact">
+        <h3>Connect With Us</h3>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="mailto:contact@absasjsu.org"><i class="fas fa-envelope"></i></a>
+        </div>
+        <p>&copy; 2024 ABSA SJSU. All rights reserved.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src='https://cdn.jsdelivr.net/npm/@fullcalendar/core@6.1.10/main.min.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid@6.1.10/main.min.js'></script>
+    <script>
+        // Calendar initialization (same as in index.html)
+        document.addEventListener('DOMContentLoaded', function() {
+            var calendarEl = document.getElementById('calendar');
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'dayGridMonth',
+                headerToolbar: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'dayGridMonth,dayGridWeek'
+                },
+                events: [
+                    {
+                        title: 'Weekly Meeting',
+                        start: '2024-03-15',
+                        color: '#3498DB'
+                    },
+                    {
+                        title: 'Community Dinner',
+                        start: '2024-03-20',
+                        color: '#E74C3C'
+                    }
+                ]
+            });
+            calendar.render();
+        });
+    </script>
+</body>
+</html> 
