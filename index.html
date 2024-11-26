@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABSA SJSU - Ahlul-Bayt Student Association</title>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FullCalendar CSS -->
+    <link href='https://cdn.jsdelivr.net/npm/@fullcalendar/core@6.1.10/main.min.css' rel='stylesheet' />
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">ABSA SJSU</a>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#calendar">Events</a>
+                <a href="#gallery">Photos</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Ahlul-Bayt Student Association</h1>
+            <p>Fostering community, understanding, and spiritual growth at San Jose State University</p>
+            <a href="#calendar" class="cta-button">View Upcoming Events</a>
+        </div>
+    </section>
+
+    <!-- Calendar Section -->
+    <section class="calendar-section" id="calendar">
+        <h2 class="section-title">Upcoming Events</h2>
+        <div id="calendar"></div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section" id="gallery">
+        <h2 class="section-title">Photo Gallery</h2>
+        
+        <!-- Gallery Tabs -->
+        <div class="gallery-tabs">
+            <button class="tab-button active" data-tab="events">Events</button>
+            <button class="tab-button" data-tab="collaborations">Collaborations</button>
+            <button class="tab-button" data-tab="activities">Activities</button>
+        </div>
+
+        <!-- Gallery Grid -->
+        <div class="gallery-grid active" id="events">
+            <div class="gallery-item">
+                <img src="images/event1.jpg" alt="Event 1" onerror="this.src='https://via.placeholder.com/300x200'">
+                <div class="gallery-caption">Weekly Gathering</div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/event2.jpg" alt="Event 2" onerror="this.src='https://via.placeholder.com/300x200'">
+                <div class="gallery-caption">Eid Celebration</div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/event3.jpg" alt="Event 3" onerror="this.src='https://via.placeholder.com/300x200'">
+                <div class="gallery-caption">Special Event</div>
+            </div>
+        </div>
+
+        <div class="gallery-grid" id="collaborations">
+            <div class="gallery-item">
+                <img src="images/collab1.jpg" alt="Collaboration 1" onerror="this.src='https://via.placeholder.com/300x200'">
+                <div class="gallery-caption">Group Photo</div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/collab2.jpg" alt="Collaboration 2" onerror="this.src='https://via.placeholder.com/300x200'">
+                <div class="gallery-caption">Members Meeting</div>
+            </div>
+        </div>
+
+        <div class="gallery-grid" id="activities">
+            <div class="gallery-item">
+                <img src="images/activity1.jpg" alt="Activity 1" onerror="this.src='https://via.placeholder.com/300x200'">
+                <div class="gallery-caption">Workshop Session</div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/activity2.jpg" alt="Activity 2" onerror="this.src='https://via.placeholder.com/300x200'">
+                <div class="gallery-caption">Volunteer Work</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="about-content">
+            <h2 class="section-title">About ABSA</h2>
+            <p>The Ahlul-Bayt Student Association at San Jose State University is dedicated to creating a welcoming environment for students interested in learning about and following the teachings of Ahlul-Bayt.</p>
+            <p>We organize regular events, discussions, and gatherings to promote understanding, foster community bonds, and provide spiritual guidance to our members.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <h3>Connect With Us</h3>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="mailto:contact@absasjsu.org"><i class="fas fa-envelope"></i></a>
+        </div>
+        <p>&copy; 2024 ABSA SJSU. All rights reserved.</p>
+    </footer>
+
+    <!-- FullCalendar Scripts -->
+    <script src='https://cdn.jsdelivr.net/npm/@fullcalendar/core@6.1.10/main.min.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid@6.1.10/main.min.js'></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var calendarEl = document.getElementById('calendar');
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'dayGridMonth',
+                headerToolbar: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'dayGridMonth,dayGridWeek'
+                },
+                events: [
+                    // Add your events here
+                    {
+                        title: 'Weekly Meeting',
+                        start: '2024-03-15',
+                        color: '#3498DB'
+                    },
+                    {
+                        title: 'Community Dinner',
+                        start: '2024-03-20',
+                        color: '#E74C3C'
+                    }
+                ]
+            });
+            calendar.render();
+        });
+    </script>
+    <script>
+        // Gallery Tab Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const galleryGrids = document.querySelectorAll('.gallery-grid');
+
+            function switchTab(tabId) {
+                // Remove active class from all buttons and grids
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                galleryGrids.forEach(grid => grid.classList.remove('active'));
+
+                // Add active class to selected button and grid
+                const selectedButton = document.querySelector(`[data-tab="${tabId}"]`);
+                const selectedGrid = document.getElementById(tabId);
+                
+                if (selectedButton && selectedGrid) {
+                    selectedButton.classList.add('active');
+                    selectedGrid.classList.add('active');
+                }
+            }
+
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const tabId = button.getAttribute('data-tab');
+                    switchTab(tabId);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
